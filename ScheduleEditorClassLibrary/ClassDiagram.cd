@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="SheduleEditorV6.DataGridViewExtesions" Collapsed="true">
+    <Position X="12" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAABAAAAAAAAAICAAAAAAAUAABAIAAQIAAA=</HashCode>
+      <FileName>ClassDataGridViewExtesions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScheduleEditorClassLibrary.FacultyGroups">
+    <Position X="0.75" Y="0.5" Width="1.5" />
+    <AssociationLine Name="Groups" Type="ScheduleEditorClassLibrary.Group">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.154" Y="0.1" Height="0.182" Width="1.539" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClassFacultyGroups.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Groups" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ScheduleEditorClassLibrary.Group">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <AssociationLine Name="Classes" Type="ScheduleEditorClassLibrary.AcademicClass">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-0.083" Y="0.074" Height="0.182" Width="2.009" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAEAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClassFacultyGroups.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Classes" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ScheduleEditorClassLibrary.AcademicClass">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <AssociationLine Name="Type" Type="ScheduleEditorClassLibrary.ClassTypes" ManuallyRouted="true">
+      <Path>
+        <Point X="9" Y="1.938" />
+        <Point X="9.924" Y="1.938" />
+        <Point X="9.924" Y="1.312" />
+        <Point X="10" Y="1.312" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.141" Y="0.079" Height="0.182" Width="0.578" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Teacher" Type="ScheduleEditorClassLibrary.Teacher">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.856" Y="0.111" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="SubGroup" Type="ScheduleEditorClassLibrary.SubGroups" ManuallyRouted="true">
+      <Path>
+        <Point X="8.812" Y="2.247" />
+        <Point X="8.812" Y="2.361" />
+        <Point X="10" Y="2.361" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.102" Y="0.09" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAQAAAAAAAAAAAAAIAAAAAAAQAAAAAAAEA=</HashCode>
+      <FileName>ClassFacultyGroups.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Type" />
+      <Property Name="Teacher" />
+      <Property Name="SubGroup" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ScheduleEditorClassLibrary.ScheduleAcademicClass">
+    <Position X="10" Y="8.75" Width="2.25" />
+    <InheritanceLine Type="ScheduleEditorClassLibrary.AcademicClass" ManuallyRouted="true">
+      <Path>
+        <Point X="8.25" Y="0.5" />
+        <Point X="8.25" Y="0.104" />
+        <Point X="11.938" Y="0.104" />
+        <Point X="11.938" Y="8.75" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="WeekDay" Type="ScheduleEditorClassLibrary.WeekDays">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.486" Y="-2.746" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAUAAAAAAAEAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClassFacultyGroups.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="WeekDay" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ScheduleEditorClassLibrary.Teacher">
+    <Position X="7.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClassFacultyGroups.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScheduleEditorClassLibrary.ScheduleRow">
+    <Position X="5" Y="7.5" Width="3" />
+    <AssociationLine Name="RowType" Type="ScheduleEditorClassLibrary.RowTypes">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="1.106" Y="0.06" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="WeekDay" Type="ScheduleEditorClassLibrary.WeekDays" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.75" Y="7.5" />
+        <Point X="7.75" Y="6.5" />
+        <Point X="10" Y="6.5" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="1.106" Y="0.06" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAQCAAAAAAEBAAAAAAACAAABAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>ClassScheduleRow.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="RowType" />
+      <Property Name="WeekDay" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ScheduleEditorClassLibrary.Preference">
+    <Position X="5.25" Y="5.25" Width="2" />
+    <AssociationLine Name="WeekDay" Type="ScheduleEditorClassLibrary.WeekDays">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="1.818" Y="0.06" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClassTeacherPreference.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="WeekDay" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ScheduleEditorClassLibrary.TeacherPreference">
+    <Position X="0.75" Y="5.25" Width="2.25" />
+    <AssociationLine Name="Preferences" Type="ScheduleEditorClassLibrary.Preference">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.14" Y="0.08" Height="0.182" Width="2.024" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>ClassTeacherPreference.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Preferences" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ScheduleEditorClassLibrary.ScheduleFacultyRows">
+    <Position X="0.75" Y="7.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAQAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>ScheduleFacultyRows.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Data" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ScheduleEditorClassLibrary.SGroup">
+    <Position X="0.75" Y="2.75" Width="2.25" />
+    <AssociationLine Name="Groups" Type="ScheduleEditorClassLibrary.Group" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.938" Y="2.75" />
+        <Point X="1.938" Y="2.622" />
+        <Point X="4.75" Y="2.622" />
+        <Point X="4.75" Y="2.247" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="1.421" Y="0.07" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Classes" Type="ScheduleEditorClassLibrary.AcademicClass">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="1.248" Y="0.873" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAEAAAAEAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SGroup.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Classes" />
+      <Property Name="Groups" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Enum Name="ScheduleEditorClassLibrary.RowTypes">
+    <Position X="10" Y="7" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIACAAAAAAAAAAAQAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>ClassScheduleRow.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ScheduleEditorClassLibrary.ClassTypes">
+    <Position X="10" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ScheduleEditorClassLibrary.SubGroups">
+    <Position X="10" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ScheduleEditorClassLibrary.WeekDays">
+    <Position X="10" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAIAACAAAAAAAAAAACAAIAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

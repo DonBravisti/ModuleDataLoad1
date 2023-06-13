@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ScheduleEditorClassLibrary.AcademicClass">
+    <Position X="6.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAQAAAAAAAAAAAAAIAAAAAAAQAAAAAAAEA=</HashCode>
+      <FileName>AcademicClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScheduleEditorClassLibrary.FacultyGroups">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAEAAAAAQAAAAAAAAAAAgAAAECAAEAAAAAAAAAAA=</HashCode>
+      <FileName>FacultyGroups.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScheduleEditorClassLibrary.Group">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAEgAEAAAAAAAAAEAAAEAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Group.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScheduleEditorClassLibrary.SAcademicClass" Collapsed="true">
+    <Position X="11.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAUAAAAAAAEAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>SAcademicClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScheduleEditorClassLibrary.Schedule" Collapsed="true">
+    <Position X="13.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAABIAAKAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Schedule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScheduleEditorClassLibrary.ScheduleRow" Collapsed="true">
+    <Position X="13.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQCAQAAAgEBAAAAAQACAgABAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>ScheduleRow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScheduleEditorClassLibrary.SGroup" Collapsed="true">
+    <Position X="13.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAEAACAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScheduleEditorClassLibrary.Teacher">
+    <Position X="8.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAQAAAAAAAAAAAAAAAAAAmA=</HashCode>
+      <FileName>Teacher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScheduleEditorClassLibrary.TeacherPreference" Collapsed="true">
+    <Position X="13.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TeacherPreference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SheduleEditorV6.DataGridViewExtesions" Collapsed="true">
+    <Position X="11.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAABAAAAAAAAAICAAAAAAAEAABAIAAQIAAA=</HashCode>
+      <FileName>DataGridViewExtesions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="ScheduleEditorClassLibrary.ClassTypes">
+    <Position X="3" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ScheduleEditorClassLibrary.SubGroups">
+    <Position X="4.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ScheduleEditorClassLibrary.RowTypes" Collapsed="true">
+    <Position X="11.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIACAAAAAAAAAAAQAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ScheduleEditorClassLibrary.Results" Collapsed="true">
+    <Position X="11.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgABABAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

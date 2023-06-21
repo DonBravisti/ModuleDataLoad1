@@ -29,7 +29,7 @@ namespace ModuleDataLoad1
                         @class.ClassTitle, @class.Teacher.Name, @class.Type.ToString(), @class.Hours);
 
                     ScheduleRow row = new ScheduleRow(DayOfWeek.Friday, 3);
-                    row.Group1week1 = new SAcademicClass(601, DayOfWeek.Friday, 2, @class);
+                    row.Group1week1 = new SAcademicClass(609, DayOfWeek.Friday, 2, @class);
                     rows.Add(row);
                 }
                 SGroup group1 = new SGroup(group.Title, rows);

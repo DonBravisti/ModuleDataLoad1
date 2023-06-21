@@ -299,9 +299,8 @@ namespace ScheduleEditorClassLibrary
             int AudId = (int)command.ExecuteScalar();
             int weekDay = (int)academicClass.WeekDay;
 
-            string queryInsertCRoomFund = $@"INSERT INTO {databaseName}.`classroom_funds` (`day_week`, `lesson_num`, `week_num`, `croom_id`)
-                                             VALUES ('{weekDay}', '{academicClass.ClassNumber}',
-                                             '1', '{AudId}');";
+            string queryInsertCRoomFund = $@"INSERT INTO {databaseName}.`classroom_funds` (`current_year`, `semester`, `day_week`, `lesson_num`, `week_num`, `croom_id`)
+                                             VALUES ('0', '0', '{weekDay}', '{academicClass.ClassNumber}', '1', '{AudId}');";
             command = new MySqlCommand(queryInsertCRoomFund, connection);
             command.ExecuteNonQuery();
 

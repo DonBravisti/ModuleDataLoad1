@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 using Newtonsoft.Json;
 
 namespace ScheduleEditorClassLibrary
@@ -235,7 +236,86 @@ namespace ScheduleEditorClassLibrary
             //    {
             //        sRow.Group2week1 = sAcademicClass;
             //    }
-            //}
+            //}            
+        }
+
+
+
+        //Отравка расписания в базу данных
+        public void SendToDB(string connectionString)
+        {
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder(connectionString);
+
+            string databaseName = builder.Database;
+
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            connection.Open();
+
+            foreach (var group in Groups)
+            {
+                int groupId = FacultyGroups.GetGroupId(group.Title, databaseName, connection);
+                foreach (var row in group.Rows)
+                {
+                    SendClassToDB(databaseName, connection, groupId, row.Group1week1);
+                    //SendClassToDB(databaseName, connection, groupId, row.Group1week2);
+                    //SendClassToDB(databaseName, connection, groupId, row.Group2week1);
+                    //SendClassToDB(databaseName, connection, groupId, row.Group2week2);
+                }
+            }
+
+            connection.Close();
+        }
+
+        private void SendClassToDB(string databaseName, MySqlConnection connection, int groupId, SAcademicClass academicClass)
+        {
+            if (academicClass == null) return;
+
+            int employeeId = GetEmployeeId(academicClass.Teacher.Name, databaseName, connection);
+            int subgroup = (int)academicClass.SubGroup + 1;
+            int type = (int)academicClass.Type + 1;
+            int cRoomFundId = SetAndGetCRoomFundId(academicClass, databaseName, connection);
+            int eduSemId = GetEduSemId(academicClass.ClassTitle, databaseName, connection);
+
+            string query = $@"INSERT INTO `{databaseName}`.`schedule` 
+                                    (`group_id`, `subgroup_num`, `edu_semester_id`, `subject_form_id`, `croom_fund_id`, `employee_id`)
+                                    VALUES ('{groupId}', '{subgroup}', '{eduSemId}', '{type}', '{cRoomFundId}', '{employeeId}');";
+            MySqlCommand command = new MySqlCommand(query, connection);
+            command.ExecuteNonQuery();
+        }
+
+        private int GetEduSemId(string classTitle, string databaseName, MySqlConnection connection)
+        {
+            string query = $@"SELECT id FROM {databaseName}.edu_semesters where edu_plan_id=
+                             (SELECT id FROM {databaseName}.edu_plan where subject_id=
+                             (SELECT id FROM {databaseName}.subjects Where title='{classTitle}'));";
+            MySqlCommand command = new MySqlCommand(query, connection);
+            return (int)command.ExecuteScalar();
+        }
+
+        private int SetAndGetCRoomFundId(SAcademicClass academicClass, string databaseName, MySqlConnection connection)
+        {
+            string queryGetClassroomId = $"SELECT id FROM {databaseName}.classrooms WHERE number='{academicClass.Audience}' LIMIT 1";
+            MySqlCommand command = new MySqlCommand(queryGetClassroomId, connection);
+            int AudId = (int)command.ExecuteScalar();
+            int weekDay = (int)academicClass.WeekDay;
+
+            string queryInsertCRoomFund = $@"INSERT INTO `test`.`classroom_funds` (`day_week`, `lesson_num`, `week_num`, `croom_id`)
+                                             VALUES ('{weekDay}', '{academicClass.ClassNumber}',
+                                             '1', '{AudId}');";
+            command = new MySqlCommand(queryInsertCRoomFund, connection);
+            command.ExecuteNonQuery();
+
+            string queryGetCRoomFundId = $"SELECT LAST_INSERT_ID();";
+            command = new MySqlCommand(queryGetCRoomFundId, connection);
+            return int.Parse(command.ExecuteScalar().ToString());
+        }
+
+        private int GetEmployeeId(string name, string databaseName, MySqlConnection connection)
+        {
+            string surname = name.Split()[0];
+            string queryGetGroupId = $"SELECT id FROM {databaseName}.employees WHERE surname='{surname}' LIMIT 1";
+            MySqlCommand command = new MySqlCommand(queryGetGroupId, connection);
+            return (int)command.ExecuteScalar();
         }
     }
 }

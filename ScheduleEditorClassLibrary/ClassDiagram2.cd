@@ -17,33 +17,33 @@
   <Class Name="ScheduleEditorClassLibrary.Group">
     <Position X="4.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAAAAEgAEAAAAAAAAAEAAAEAAAAAAAAAAABAAA=</HashCode>
+      <HashCode>AAIAAAAAAAEgAEAAAAAgAAAEAAAAAAAQAAAAAAABAAA=</HashCode>
       <FileName>Group.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ScheduleEditorClassLibrary.SAcademicClass" Collapsed="true">
-    <Position X="11.5" Y="0.5" Width="1.5" />
+  <Class Name="ScheduleEditorClassLibrary.SAcademicClass">
+    <Position X="12" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAUAAAAAAAEAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
       <FileName>SAcademicClass.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ScheduleEditorClassLibrary.Schedule" Collapsed="true">
-    <Position X="13.25" Y="0.5" Width="1.5" />
+  <Class Name="ScheduleEditorClassLibrary.Schedule">
+    <Position X="6.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAEAAAAAABIAAKAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAEAAAAAQBIAAKAAAAAAgAAAAAAAAAQRAAAAAAAA=</HashCode>
       <FileName>Schedule.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ScheduleEditorClassLibrary.ScheduleRow" Collapsed="true">
-    <Position X="13.25" Y="2" Width="1.5" />
+  <Class Name="ScheduleEditorClassLibrary.ScheduleRow">
+    <Position X="10.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAQCAQAAAgEBAAAAAQACAgABAAAAAAAAAgAAAAAAAA=</HashCode>
       <FileName>ScheduleRow.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ScheduleEditorClassLibrary.SGroup" Collapsed="true">
-    <Position X="13.25" Y="1.25" Width="1.5" />
+  <Class Name="ScheduleEditorClassLibrary.SGroup">
+    <Position X="8.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAAAAAAEAACAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>SGroup.cs</FileName>
@@ -57,17 +57,10 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ScheduleEditorClassLibrary.TeacherPreference" Collapsed="true">
-    <Position X="13.25" Y="2.75" Width="1.5" />
+    <Position X="10.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAQAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>TeacherPreference.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="SheduleEditorV6.DataGridViewExtesions" Collapsed="true">
-    <Position X="11.5" Y="1.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>BAAAAAAAAAABAAAAAAAAAICAAAAAAAEAABAIAAQIAAA=</HashCode>
-      <FileName>DataGridViewExtesions.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="ScheduleEditorClassLibrary.ClassTypes">
@@ -85,14 +78,14 @@
     </TypeIdentifier>
   </Enum>
   <Enum Name="ScheduleEditorClassLibrary.RowTypes" Collapsed="true">
-    <Position X="11.5" Y="2" Width="1.5" />
+    <Position X="3" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAIACAAAAAAAAAAAQAAAAAAAAAACAAAAA=</HashCode>
       <FileName>Enums.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="ScheduleEditorClassLibrary.Results" Collapsed="true">
-    <Position X="11.5" Y="2.75" Width="1.5" />
+    <Position X="4.75" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAgABABAAAAAAABAAAAAAAAAA=</HashCode>
       <FileName>Enums.cs</FileName>

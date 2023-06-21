@@ -37,7 +37,7 @@ namespace ScheduleEditorClassLibrary
             try
             {                
                 connection.Open();
-                this.FillGroupes(connection, databaseName);                
+                FillGroupes(connection, databaseName);                
             }
             catch (MySqlException ex)
             {
@@ -96,7 +96,7 @@ namespace ScheduleEditorClassLibrary
             connection.Close();
         }
 
-        private int GetEmployeeId(string name, string databaseName, MySqlConnection connection)
+        internal static int GetEmployeeId(string name, string databaseName, MySqlConnection connection)
         {
             string surname = name.Split()[0];
             string queryGetGroupId = $"SELECT id FROM {databaseName}.employees WHERE surname='{surname}' LIMIT 1";
@@ -104,7 +104,7 @@ namespace ScheduleEditorClassLibrary
             return (int)command.ExecuteScalar();
         }
 
-        private int GetGroupId(string title, string databaseName, MySqlConnection connection)
+        internal static int GetGroupId(string title, string databaseName, MySqlConnection connection)
         {
             string queryGetGroupId = $"SELECT id FROM {databaseName}.groups WHERE title='{title}' LIMIT 1";
             MySqlCommand command = new MySqlCommand(queryGetGroupId, connection);

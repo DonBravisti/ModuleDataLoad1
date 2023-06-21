@@ -32,7 +32,7 @@ namespace ScheduleEditorClassLibrary
 
         internal void FillAcademicClasses(MySqlConnection connection, string databaseName)
         {
-            int groupId = GetGroupId(Title, databaseName, connection);
+            int groupId = FacultyGroups.GetGroupId(Title, databaseName, connection);
 
             string queryGetLoads = $"SELECT * FROM {databaseName}.empl_loads WHERE group_id = {groupId}";
             MySqlDataAdapter dataAdapter = new MySqlDataAdapter(queryGetLoads, connection);
@@ -42,25 +42,47 @@ namespace ScheduleEditorClassLibrary
             DataTable emplLoads = dataSet.Tables[0];
             foreach (DataRow row in emplLoads.Rows)
             {
-                string classTitle = row[6].ToString();
+                string classTitle = GetClassTitle(row[5].ToString(), databaseName, connection);
                 string teacherName = GetTeacherName(row[3].ToString(), databaseName, connection);
-                int hours = (int)double.Parse(row[10].ToString());
+                int hours = GetHours(row[5].ToString(), databaseName, connection);
                 string classTypeString = GetClassType(row[8].ToString(), databaseName, connection);
                 ClassTypes classType = classTypeString == "Лекция" ? ClassTypes.Lecture : ClassTypes.Practice;
 
-                AcademicClass @class = 
+                AcademicClass academicClass = 
                     new AcademicClass(classTitle, new Teacher(teacherName), hours, classType, SubGroups.First);
 
-                Classes.Add(@class);
+                Classes.Add(academicClass);
             }
         }
 
-        private int GetGroupId(string title, string databaseName, MySqlConnection connection)
+        private int GetHours(string eduSemId, string databaseName, MySqlConnection connection)
         {
-            string queryGetGroupId = $"SELECT id FROM {databaseName}.groups WHERE title='{title}' LIMIT 1";
-            MySqlCommand command = new MySqlCommand(queryGetGroupId, connection);
-            return (int)command.ExecuteScalar();
+            string queryGetHoursSum = $"SELECT Sum(lecture+practice+laboratory) FROM {databaseName}.edu_semesters where id={eduSemId}";
+            MySqlCommand command = new MySqlCommand(queryGetHoursSum, connection);
+            return int.Parse(command.ExecuteScalar().ToString());
         }
+
+        private string GetClassTitle(string eduSemId, string databaseName, MySqlConnection connection)
+        {
+            string queryGetEduPlanId = $"SELECT edu_plan_id FROM {databaseName}.edu_semesters where id={eduSemId}";
+            MySqlCommand command = new MySqlCommand(queryGetEduPlanId, connection);
+            int eduPlanId = (int)command.ExecuteScalar();
+
+            string queryGetSubjectId = $"SELECT subject_id FROM {databaseName}.edu_plan where id={eduPlanId}";
+            command = new MySqlCommand(queryGetSubjectId, connection);
+            int subjectId = (int)command.ExecuteScalar();
+
+            string queryGetSubject = $"SELECT title FROM {databaseName}.subjects where id={subjectId}";
+            command = new MySqlCommand(queryGetSubject, connection);
+            return (string)command.ExecuteScalar();
+        }
+
+        //private int GetGroupId(string title, string databaseName, MySqlConnection connection)
+        //{
+        //    string queryGetGroupId = $"SELECT id FROM {databaseName}.groups WHERE title='{title}' LIMIT 1";
+        //    MySqlCommand command = new MySqlCommand(queryGetGroupId, connection);
+        //    return (int)command.ExecuteScalar();
+        //}
 
         private string GetClassType(string id, string databaseName, MySqlConnection connection)
         {

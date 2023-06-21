@@ -87,6 +87,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AcademicClass.cs" />
+    <Compile Include="DataGridViewExtesions.cs" />
     <Compile Include="Group.cs" />
     <Compile Include="SAcademicClass.cs" />
     <Compile Include="ScheduleRow.cs" />
